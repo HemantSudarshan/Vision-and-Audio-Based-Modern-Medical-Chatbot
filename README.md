@@ -82,9 +82,5 @@ Created by Hemant Sudarshan on March 2, 2025, as a learning project to explore m
 ## Contributing
 Feel free to fork, submit issues, or send pull requests! Suggestions for improving the UI, adding features, or refining the AI responses are welcome.
 
-## License
-MIT License - see `LICENSE` for details.
-```
 
----
 
