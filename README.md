@@ -1,154 +1,90 @@
-# Project Setup Guide
 
-This guide provides step-by-step instructions to set up your project environment, including the installation of FFmpeg and PortAudio across macOS, Linux, and Windows, as well as setting up a Python virtual environment using Pipenv, pip, or conda.
 
-## Table of Contents
+```markdown
+# Vision and Audio Based Modern Medical Chatbot
 
-1. [Installing FFmpeg and PortAudio](#installing-ffmpeg-and-portaudio)
-   - [macOS](#macos)
-   - [Linux](#linux)
-   - [Windows](#windows)
-2. [Setting Up a Python Virtual Environment](#setting-up-a-python-virtual-environment)
-   - [Using Pipenv](#using-pipenv)
-   - [Using pip and venv](#using-pip-and-venv)
-   - [Using Conda](#using-conda)
-3. [Running the application](#project-phases-and-python-commands)
+![1](https://github.com/user-attachments/assets/40fcc311-8f2e-4e81-a1fd-8d2e7a4ed433)
 
-## Installing FFmpeg and PortAudio
+Welcome to the *Vision and Audio Based Modern Medical Chatbot*, an innovative educational tool that simulates medical consultations using cutting-edge AI technologies. Speak your symptoms, upload an image, and receive a fictional diagnosis in both text and audio form—all for learning purposes, not real medical advice.
 
-### macOS
+## Features
+- **Audio Transcription**: Converts spoken symptoms into text using Groq’s Whisper model.
+- **Image Analysis**: Analyzes uploaded images with Groq’s LLaMA vision model to simulate medical insights.
+- **Voice Response**: Generates natural-sounding audio diagnoses via ElevenLabs.
+- **Interactive UI**: Built with Gradio for a user-friendly, web-based experience.
 
-1. **Install Homebrew** (if not already installed):
+## Demo
+![Demo GIF](demo.gif)  
+*(Add a GIF or screenshot here by recording your app in action and uploading it to this repo)*
 
+## Installation
+1. **Clone the Repository**:
    ```bash
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   git clone https://github.com/yourusername/VisionAudioMedicalChatbot.git
+   cd VisionAudioMedicalChatbot
    ```
-
-2. **Install FFmpeg and PortAudio:**
-
+2. **Set Up a Virtual Environment**:
    ```bash
-   brew install ffmpeg portaudio
+   python -m venv venv
+   source venv/bin/activate  # Linux/Mac
+   venv\Scripts\activate     # Windows
    ```
+3. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. **Set Environment Variables**:
+   ```bash
+   export GROQ_API_KEY="your-grok-key"
+   export ELEVENLABS_API_KEY="your-elevenlabs-key"
+   ```
+   On Windows:
+   ```powershell
+   $env:GROQ_API_KEY="your-grok-key"
+   $env:ELEVENLABS_API_KEY="your-elevenlabs-key"
+   ```
+5. **Run the App**:
+   ```bash
+   python gradio_app.py
+   ```
+   Open `http://localhost:7860` in your browser.
 
-
-### Linux
-For Debian-based distributions (e.g., Ubuntu):
-
-1. **Update the package list**
-
+## Requirements
+See `requirements.txt`:
 ```
-sudo apt update
-```
-
-2. **Install FFmpeg and PortAudio:**
-```
-sudo apt install ffmpeg portaudio19-dev
-```
-
-### Windows
-
-#### Download FFmpeg:
-1. Visit the official FFmpeg download page: [FFmpeg Downloads](https://ffmpeg.org/download.html)
-2. Navigate to the Windows builds section and download the latest static build.
-
-#### Extract and Set Up FFmpeg:
-1. Extract the downloaded ZIP file to a folder (e.g., `C:\ffmpeg`).
-2. Add the `bin` directory to your system's PATH:
-   - Search for "Environment Variables" in the Start menu.
-   - Click on "Edit the system environment variables."
-   - In the System Properties window, click on "Environment Variables."
-   - Under "System variables," select the "Path" variable and click "Edit."
-   - Click "New" and add the path to the `bin` directory (e.g., `C:\ffmpeg\bin`).
-   - Click "OK" to apply the changes.
-
-#### Install PortAudio:
-1. Download the PortAudio binaries from the official website: [PortAudio Downloads](http://www.portaudio.com/download.html)
-2. Follow the installation instructions provided on the website.
-
----
-
-## Setting Up a Python Virtual Environment
-
-### Using Pipenv
-1. **Install Pipenv (if not already installed):**  
-```
-pip install pipenv
+groq==0.4.0
+gradio==4.19
+elevenlabs==0.3.0
 ```
 
-2. **Install Dependencies with Pipenv:** 
+## Usage
+- **Speak**: Record your symptoms using the microphone.
+- **Upload**: Optionally add an image (e.g., a rash photo).
+- **Diagnose**: Click "Get Diagnosis" to see and hear a simulated response.
 
-```
-pipenv install
-```
+## Project Structure
+- `gradio_app.py`: Main Gradio interface and logic.
+- `voice_of_the_patient.py`: Audio transcription with Groq.
+- `voice_of_the_doctor.py`: Text-to-speech with ElevenLabs.
+- `brain_of_the_doctor.py`: Image analysis with Groq.
 
-3. **Activate the Virtual Environment:** 
+## Skills Demonstrated
+- Python programming
+- AI integration (speech-to-text, vision, text-to-speech)
+- Web app development with Gradio
+- API usage (Groq, ElevenLabs)
+- File handling and logging
 
-```
-pipenv shell
+## About
+Created by Hemant Sudarshan on March 2, 2025, as a learning project to explore multimodal AI in a medical context. This is not intended for real medical use—consult a professional for actual health concerns.
+
+## Contributing
+Feel free to fork, submit issues, or send pull requests! Suggestions for improving the UI, adding features, or refining the AI responses are welcome.
+
+## License
+MIT License - see `LICENSE` for details.
 ```
 
 ---
 
-### Using `pip` and `venv`
-#### Create a Virtual Environment:
-```
-python -m venv venv
-```
-
-#### Activate the Virtual Environment:
-**macOS/Linux:**
-```
-source venv/bin/activate
-```
-
-**Windows:**
-```
-venv\Scripts\activate
-```
-
-#### Install Dependencies:
-```
-pip install -r requirements.txt
-```
-
----
-
-### Using Conda
-#### Create a Conda Environment:
-```
-conda create --name myenv python=3.11
-```
-
-#### Activate the Conda Environment:
-```
-conda activate myenv
-```
-
-#### Install Dependencies:
-```
-pip install -r requirements.txt
-```
-
-
-# Project Phases and Python Commands
-
-## Phase 1: Brain of the doctor
-```
-python brain_of_the_doctor.py
-```
-
-## Phase 2: Voice of the patient
-```
-python voice_of_the_patient.py
-```
-
-## Phase 3: Voice of the doctor
-```
-python voice_of_the_doctor.py
-```
-
-## Phase 4: Setup Gradio UI
-```
-python gradio_app.py
-```
-
+Just copy this into your `README.md` file, replace "[Your Name]" with your actual name (e.g., "Hemant"), and you’re good to go! Let me know if you need anything else.
