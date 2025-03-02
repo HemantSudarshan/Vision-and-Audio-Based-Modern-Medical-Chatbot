@@ -2,8 +2,6 @@
 ![1](https://github.com/user-attachments/assets/ad49f752-478a-4a2f-a22d-1e89f85dc80b)
 
 
-Here’s your well-formatted version with improvements for clarity, structure, and professionalism. You can copy and paste it directly!  
-
 ```markdown
 # Vision and Audio-Based Modern Medical Chatbot
 
@@ -111,6 +109,4 @@ Want to improve this project? Feel free to:
 ✔️ Send pull requests  
 
 Suggestions for improving the UI, adding features, or refining AI responses are always welcome! 🚀  
-```
-
 
