@@ -18,12 +18,9 @@ Welcome to the *Vision and Audio Based Modern Medical Chatbot*, an innovative ed
 - **Voice Response**: Generates natural-sounding audio diagnoses via ElevenLabs.
 - **Interactive UI**: Built with Gradio for a user-friendly, web-based experience.
 
-## Demo
-![Demo GIF](demo.gif)  
-*(Add a GIF or screenshot here by recording your app in action and uploading it to this repo)*
 
 ## Installation
-1. **Clone the Repository**:
+1. Clone the Repository:
    ```bash
    git clone https://github.com/yourusername/VisionAudioMedicalChatbot.git
    cd VisionAudioMedicalChatbot
