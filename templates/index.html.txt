@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Doctor</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 600px; margin: auto; }
+        textarea { width: 100%; height: 100px; margin: 10px 0; }
+        audio { margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Doctor with Vision and Voice</h1>
+        <form method="post" enctype="multipart/form-data">
+            <label for="audio">Record Audio (upload .wav):</label><br>
+            <input type="file" name="audio" accept="audio/*"><br><br>
+            <label for="image">Upload Image (optional):</label><br>
+            <input type="file" name="image" accept="image/*"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+        
+        <h3>Speech to Text</h3>
+        <textarea readonly>{{ speech_to_text }}</textarea>
+        
+        <h3>Doctor's Response</h3>
+        <textarea readonly>{{ doctor_response }}</textarea>
+        
+        {% if audio_path %}
+            <h3>Doctor's Voice</h3>
+            <audio controls>
+                <source src="{{ url_for('serve_audio', filename=audio_path) }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        {% endif %}
+    </div>
+</body>
+</html>
