@@ -1,9 +1,10 @@
 
+![1](https://github.com/user-attachments/assets/ad49f752-478a-4a2f-a22d-1e89f85dc80b)
 
 ```markdown
 # Vision and Audio Based Modern Medical Chatbot
 
-![1](https://github.com/user-attachments/assets/40fcc311-8f2e-4e81-a1fd-8d2e7a4ed433)
+
 
 Welcome to the *Vision and Audio Based Modern Medical Chatbot*, an innovative educational tool that simulates medical consultations using cutting-edge AI technologies. Speak your symptoms, upload an image, and receive a fictional diagnosis in both text and audio form—all for learning purposes, not real medical advice.
 
@@ -87,4 +88,3 @@ MIT License - see `LICENSE` for details.
 
 ---
 
-Just copy this into your `README.md` file, replace "[Your Name]" with your actual name (e.g., "Hemant"), and you’re good to go! Let me know if you need anything else.
