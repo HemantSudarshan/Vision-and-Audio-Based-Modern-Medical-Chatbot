@@ -1,6 +1,10 @@
 
 ![1](https://github.com/user-attachments/assets/ad49f752-478a-4a2f-a22d-1e89f85dc80b)
 
+
+
+
+
 ```markdown
 # Vision and Audio Based Modern Medical Chatbot
 
